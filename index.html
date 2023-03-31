@@ -1,72 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/media.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <title>Weather-App</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="./assets/css/media.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <title>Weather-App</title>
-</head>
+  <body>
+    <section>
+      <header>
+        <form onsubmit="return false">
+          <input type="text" placeholder="City name" class="searchInput" />
+          <button onclick="search()" class="searchButton">Search</button>
+        </form>
+        <h1>Weather in <span class="cityName"></span></h1>
+        <div class="tempContainer">
+          <div class="weatherPic"></div>
+          <p class="header-temperature"></p>
+        </div>
+        <span class="header-cloudiness"></span>
 
-<body>
-  <header>
-    <form onsubmit="return false">
-      <input type="text" placeholder="City name" class="searchInput" />
-      <button onclick="search()" class="searchButton">Search</button>
-    </form>
-    <h1>Weather in <span class="cityName"></span></h1>
-    <div class="tempContainer">
-      <div class="weatherPic">
+        <span class="currently-date"
+          >Obtained at
+          <p class="header-time"></p>
+          <a class="wrong-data" href="">Wrong data?</a>
+        </span>
+      </header>
+      <div class="table-container">
+        <table style="width: 100%">
+          <tr>
+            <td>Local Time</td>
+            <td class="localTime"></td>
+          </tr>
+          <tr>
+            <td>Wind</td>
+            <td class="wind"></td>
+          </tr>
+          <tr>
+            <td>Cloudiness</td>
+            <td class="cloudniss"></td>
+          </tr>
+          <tr>
+            <td>Pressure</td>
+            <td class="pressure"></td>
+          </tr>
+          <tr>
+            <td>Humidity</td>
+            <td class="humidity"></td>
+          </tr>
+          <tr>
+            <td>Sunrise</td>
+            <td class="sunrise"></td>
+          </tr>
+          <tr>
+            <td>Sunset</td>
+            <td class="sunset"></td>
+          </tr>
+          <tr>
+            <td>Geo coords</td>
+            <td class="geo"></td>
+          </tr>
+        </table>
       </div>
-      <p class="header-temperature"></p>
-    </div>
-    <span class="header-cloudiness"></span>
-
-    <span class="currently-date">Obtained at
-      <p class="header-time"></p>
-      <a class="wrong-data" href="">Wrong data?</a>
-    </span>
-    <div class="table-container">
-      <table style="width: 100%">
-        <tr>
-          <td>Local Time</td>
-          <td class="localTime"></td>
-        </tr>
-        <tr>
-          <td>Wind</td>
-          <td class="wind"></td>
-        </tr>
-        <tr>
-          <td>Cloudiness</td>
-          <td class="cloudniss"></td>
-        </tr>
-        <tr>
-          <td>Pressure</td>
-          <td class="pressure"></td>
-        </tr>
-        <tr>
-          <td>Humidity</td>
-          <td class="humidity"></td>
-        </tr>
-        <tr>
-          <td>Sunrise</td>
-          <td class="sunrise"></td>
-        </tr>
-        <tr>
-          <td>Sunset</td>
-          <td class="sunset"></td>
-        </tr>
-        <tr>
-          <td>Geo coords</td>
-          <td class="geo"></td>
-        </tr>
-      </table>
-    </div>
-  </header>
-  <script src="./assets/js/main.js"></script>
-</body>
-
+    </section>
+    <script src="./assets/js/main.js"></script>
+  </body>
 </html>

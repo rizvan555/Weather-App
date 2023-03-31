@@ -15,7 +15,11 @@
 
   <body>
     <header>
-      <h1>Weather in London, GB</h1>
+      <form onsubmit="return false">
+        <input type="text" placeholder="City name" class="searchInput" />
+        <button onclick="search()">Search</button>
+      </form>
+      <h1>Weather in <span class="cityName"></span></h1>
       <p class="header-temperature"></p>
       <span class="header-cloudiness"></span>
 

@@ -11,6 +11,11 @@ const headerCloudiness = document.querySelector(".header-cloudiness");
 const headerTime = document.querySelector(".header-time");
 const searchInput = document.querySelector(".searchInput");
 const inputCity = document.querySelector(".cityName");
+const weatherPic = document.querySelector(".weatherPic");
+const imgRain = document.querySelector(".rain");
+const imgSun = document.querySelector(".sun");
+const imgWind = document.querySelector(".wind");
+const imgCloud = document.querySelector(".cloud");
 
 function search() {
   const date = new Date();
@@ -41,10 +46,7 @@ function search() {
     .then((response) => response.json())
     .then((data) => {
       const cityLat = data[0].lat;
-      console.log(cityLat);
       const cityLon = data[0].lon;
-      console.log(cityLon);
-      console.log(searchInput.value);
       inputCity.textContent = searchInput.value;
 
       fetch(

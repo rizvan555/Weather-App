@@ -48,6 +48,8 @@ fetch(
     const sunsetDate = new Date(sunsetTimestamp * 1000);
     const sunsetTimeString = sunsetDate.toLocaleTimeString();
 
+
+    
     localTime.textContent = `${hour}:${minute}, ${day} ${monthName} ${year}`;
     wind.textContent = `Fresh Breeze ${data.wind.speed} m/s West (${data.wind.deg})`;
     cloudniss.textContent = `${data.weather[0].description}`;
@@ -61,6 +63,4 @@ fetch(
     headerTime.textContent = `${
       hour + 1
     }:${minute}, ${day} ${monthName} ${year}`;
-
-    console.log(data);
   });

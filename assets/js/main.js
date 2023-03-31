@@ -95,7 +95,8 @@ function search() {
 
           let addNull = "";
           if (minute < 10) {
-            addNull = "0" + minute;
+            addNull = "0";
+            minute = addNull + Number(minute);
           }
 
           if (data.weather[0].main === "Rain") {
@@ -117,7 +118,7 @@ function search() {
 
           console.log(data.weather[0].main);
 
-          localTime.textContent = `${hour}:${addNull} ${day} ${monthName} ${year}`;
+          localTime.textContent = `${hour}:${minute} ${day} ${monthName} ${year}`;
           wind.textContent = `${breeze} ${data.wind.speed} m/s ${windDir} (${data.wind.deg})`;
           cloudniss.textContent = capitalize(data.weather[0].description);
           pressure.textContent = `${data.main.pressure}`;
@@ -137,7 +138,7 @@ function search() {
           );
           headerTime.textContent = `${
             hour + 1
-          }:${addNull} ${day} ${monthName} ${year}`;
+          }:${minute} ${day} ${monthName} ${year}`;
         });
     });
 }

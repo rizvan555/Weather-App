@@ -3,8 +3,31 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+.currently-date {
+  display: flex;
+}
+.currently-date p {
+  margin: 0 5px;
+}
 
 table,
 td {
   border: 1px solid black;
+}
+
+.table-container {
+  width: 70vw;
+}
+
+td {
+  padding: 5px;
 }

@@ -99,15 +99,20 @@ function search() {
           }
 
           if (data.weather[0].main === "Rain") {
-            weatherPic.innerHTML = '<img src="./assets/pics/rainy.gif" alt="rainy"/>'
+            weatherPic.innerHTML =
+              '<img src="./assets/pics/rainy.gif" alt="rainy"/>';
           } else if (data.weather[0].main === "Clouds") {
-            weatherPic.innerHTML = '<img src="./assets/pics/cloud.png" alt="cloud"/>'
+            weatherPic.innerHTML =
+              '<img src="./assets/pics/cloud.png" alt="cloud"/>';
           } else if (data.weather[0].main === "Sun") {
-            weatherPic.innerHTML = '<img src="./assets/pics/sunny.gif" alt="sun"/>'
+            weatherPic.innerHTML =
+              '<img src="./assets/pics/sunny.gif" alt="sun"/>';
           } else if (data.weather[0].main === "Clear") {
-            weatherPic.innerHTML = '<img src="./assets/pics/sunny.gif" alt="sun"/>'
+            weatherPic.innerHTML =
+              '<img src="./assets/pics/sunny.gif" alt="sun"/>';
           } else {
-            weatherPic.innerHTML = '<img src="./assets/pics/windy.gif" alt="windy"/>'
+            weatherPic.innerHTML =
+              '<img src="./assets/pics/windy.gif" alt="windy"/>';
           }
 
           console.log(data.weather[0].main);
@@ -124,14 +129,15 @@ function search() {
           )} ${data.coord.lon.toFixed(2)}]`;
           headerTemperature.textContent = `${tempInCelsius} °C`;
           headerCloudiness.textContent = `${data.weather[0].description}`;
-          headerTime.textContent = `${hour + 1
-            }:${minute}, ${day} ${monthName} ${year}`;
+          headerTime.textContent = `${
+            hour + 1
+          }:${minute}, ${day} ${monthName} ${year}`;
           headerCloudiness.textContent = capitalize(
             data.weather[0].description
           );
-          headerTime.textContent = `${hour + 1
-            }:${addNull} ${day} ${monthName} ${year}`;
-
+          headerTime.textContent = `${
+            hour + 1
+          }:${addNull} ${day} ${monthName} ${year}`;
         });
     });
 }

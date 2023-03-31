@@ -55,8 +55,7 @@ fetch(
       windDir = "South"
     } else if (data.wind.deg > 225 && data.wind.deg <= 315) {
       windDir = "West"
-    }
-    else {
+    } else {
       windDir = "Nord"
     }
 
@@ -64,8 +63,30 @@ fetch(
       return string.slice(0, 1).toUpperCase() + string.slice(1)
     }
 
-    localTime.textContent = `${hour}:${minute}, ${day} ${monthName} ${year}`;
-    wind.textContent = `Fresh Breeze ${data.wind.speed} m/s ${windDir} (${data.wind.deg})`;
+    let breeze
+    if (data.wind.speed === 0) {
+      breeze = "No breeze"
+    } else if (data.wind.speed <= 2) {
+      breeze = "Low breeze"
+    } else if (data.wind.speed <= 4) {
+      breeze = "Moderate beeze"
+    } else if (data.wind.speed >= 5) {
+      breeze = "Fresh breeze"
+    } else if (data.wind.speed >= 6) {
+      breeze = "Strong breeze"
+    } else if (data.wind.speed <= 8) {
+      breeze = "Stormy wind"
+    } else {
+      breeze = "Heavy storm"
+    }
+
+    let addNull
+    if (minute < 10) {
+      addNull = "0" + minute
+    }
+
+    localTime.textContent = `${hour}:${addNull}, ${day} ${monthName} ${year}`;
+    wind.textContent = `${breeze} ${data.wind.speed} m/s ${windDir} (${data.wind.deg})`;
     cloudniss.textContent = capitalize(data.weather[0].description);
     pressure.textContent = `${data.main.pressure}`;
     humidity.textContent = `${data.main.humidity} %`;
@@ -79,7 +100,7 @@ fetch(
     }:${minute}, ${day} ${monthName} ${year}`;
     headerCloudiness.textContent = capitalize(data.weather[0].description);
     headerTime.textContent = `${hour + 1
-      }:${minute}, ${day} ${monthName} ${year}`;
+      }:${addNull}, ${day} ${monthName} ${year}`;
 
     console.log(data);
   });

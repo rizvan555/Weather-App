@@ -26,6 +26,7 @@ body {
   outline: none;
   border: none;
 }
+
 .searchButton {
   padding: 5px 15px;
   border-radius: 5px;
@@ -39,9 +40,14 @@ header {
   background-color: #abe9cd;
   background-image: linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);
   padding: 20px;
-  width: 500px;
+  width: 600px;
   margin: 0 auto;
 }
+
+.cityName {
+  color: palegoldenrod;
+}
+
 .weatherPic {
   display: flex;
   align-items: center;
@@ -50,7 +56,6 @@ header {
 .weatherPic img {
   width: 30px;
   height: 30px;
-  margin-left: 50px;
   background-color: white;
   border-radius: 50%;
   width: 50px;
@@ -60,11 +65,35 @@ header {
 }
 
 h1 {
-  padding-bottom: 15px;
+  padding: 15px 0;
+  font-size: 40px;
+
 }
 
-.header-temperature {
-  padding-bottom: 15px;
+.searchButton {
+  background-color: white;
+}
+
+.searchButton:hover {
+  background-color: coral;
+  color: white;
+}
+
+.sun,
+.cloud,
+.rain,
+.windy {
+  visibility: hidden;
+}
+
+.tempContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: palegoldenrod;
+  font-size: 30px;
 }
 
 .currently-date {
@@ -74,6 +103,8 @@ h1 {
 
 .header-cloudiness {
   padding-bottom: 5px;
+  font-weight: 700;
+  color: palegoldenrod;
 }
 
 .currently-date p {

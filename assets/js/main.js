@@ -12,10 +12,6 @@ const headerTime = document.querySelector(".header-time");
 const searchInput = document.querySelector(".searchInput");
 const inputCity = document.querySelector(".cityName");
 const weatherPic = document.querySelector(".weatherPic");
-const imgRain = document.querySelector(".rain");
-const imgSun = document.querySelector(".sun");
-const imgWind = document.querySelector(".wind");
-const imgCloud = document.querySelector(".cloud");
 
 function search() {
   const date = new Date();
@@ -65,7 +61,7 @@ function search() {
           const sunsetDate = new Date(sunsetTimestamp * 1000);
           const sunsetTimeString = sunsetDate.toLocaleTimeString();
 
-          let windDir;
+          let windDir = "";
           if (data.wind.deg >= 45 && data.wind.deg <= 135) {
             windDir = "East";
           } else if (data.wind.deg > 135 && data.wind.deg <= 225) {
@@ -102,6 +98,20 @@ function search() {
             addNull = "0" + minute;
           }
 
+          if (data.weather[0].main === "Rain") {
+            weatherPic.innerHTML = '<img src="./assets/pics/rainy.gif" alt="rainy"/>'
+          } else if (data.weather[0].main === "Clouds") {
+            weatherPic.innerHTML = '<img src="./assets/pics/cloud.png" alt="cloud"/>'
+          } else if (data.weather[0].main === "Sun") {
+            weatherPic.innerHTML = '<img src="./assets/pics/sunny.gif" alt="sun"/>'
+          } else if (data.weather[0].main === "Clear") {
+            weatherPic.innerHTML = '<img src="./assets/pics/sunny.gif" alt="sun"/>'
+          } else {
+            weatherPic.innerHTML = '<img src="./assets/pics/windy.gif" alt="windy"/>'
+          }
+
+          console.log(data.weather[0].main);
+
           localTime.textContent = `${hour}:${addNull} ${day} ${monthName} ${year}`;
           wind.textContent = `${breeze} ${data.wind.speed} m/s ${windDir} (${data.wind.deg})`;
           cloudniss.textContent = capitalize(data.weather[0].description);
@@ -114,15 +124,14 @@ function search() {
           )} ${data.coord.lon.toFixed(2)}]`;
           headerTemperature.textContent = `${tempInCelsius} °C`;
           headerCloudiness.textContent = `${data.weather[0].description}`;
-          headerTime.textContent = `${
-            hour + 1
-          }:${minute}, ${day} ${monthName} ${year}`;
+          headerTime.textContent = `${hour + 1
+            }:${minute}, ${day} ${monthName} ${year}`;
           headerCloudiness.textContent = capitalize(
             data.weather[0].description
           );
-          headerTime.textContent = `${
-            hour + 1
-          }:${addNull} ${day} ${monthName} ${year}`;
+          headerTime.textContent = `${hour + 1
+            }:${addNull} ${day} ${monthName} ${year}`;
+
         });
     });
 }

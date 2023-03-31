@@ -18,8 +18,8 @@ body {
 }
 
 .searchInput {
-  width: 50vw;
-  padding: 5px;
+  width: 30vw;
+  padding: 10px;
   margin-bottom: 3vh;
   margin-right: 10px;
   border-radius: 5px;
@@ -28,7 +28,7 @@ body {
 }
 
 .searchButton {
-  padding: 5px 15px;
+  padding: 10px 20px;
   border-radius: 5px;
   outline: none;
   border: none;
@@ -67,7 +67,6 @@ header {
 h1 {
   padding: 15px 0;
   font-size: 40px;
-
 }
 
 .searchButton {
@@ -131,4 +130,5 @@ td {
 
 td {
   padding: 5px 0;
+  font-weight: 500;
 }

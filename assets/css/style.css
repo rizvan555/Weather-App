@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   padding: 20px;
 }
@@ -10,18 +11,46 @@ body {
 header {
   display: flex;
   flex-direction: column;
+  background-color: #abe9cd;
+  background-image: linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);
+  padding: 20px;
+  width: 500px;
+  margin: 0 auto;
+}
+
+h1 {
+  padding-bottom: 15px;
+}
+
+.header-temperature {
+  padding-bottom: 15px;
 }
 
 .currently-date {
   display: flex;
+  padding: 10px 0;
 }
+
+.header-cloudiness {
+  padding-bottom: 5px;
+}
+
 .currently-date p {
-  margin: 0 5px;
+  margin: 0 15px;
+}
+
+.wrong-data {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.wrong-data:hover {
+  color: coral;
 }
 
 table,
 td {
-  border: 1px solid black;
+  border: none;
 }
 
 .table-container {
@@ -29,5 +58,6 @@ td {
 }
 
 td {
-  padding: 5px;
+  padding: 5px 0;
+
 }

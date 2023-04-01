@@ -37,7 +37,7 @@ function search() {
   const monthName = month[monthNum];
 
   fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${searchInput.value}&limit=5&appid=97274ed796341a5e8aaa7d2bd6602b2f`
+    `http://api.openweathermap.org/geo/1.0/direct?q=${searchInput.value}&limit=5&appid={API}`
   )
     .then((response) => response.json())
     .then((data) => {
@@ -46,7 +46,7 @@ function search() {
       inputCity.textContent = searchInput.value;
 
       fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${cityLat}&lon=${cityLon}&appid=b92d874f14985184b6a96ed8d4fc539b`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${cityLat}&lon=${cityLon}&appid={API}`
       )
         .then((response) => response.json())
         .then((data) => {
